@@ -1,1 +1,32 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+
+.search-form {
+    display: flex;
+    justify-content: center;
+}
+.load-more-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+
+    margin-top: 10px;
+
+}
+.gallary {
+    display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery__image {
+    max-width: 100%;
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
+ }
+ .gallery__item {
+    display: flex;
+    flex-wrap: wrap;
+    
+ }
