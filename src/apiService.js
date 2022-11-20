@@ -7,23 +7,22 @@ export default class NewsApiService {
         this.page = 1;
         this.totalHits = null;
     }
-fetchHits() {
+    async fetchHits() {
     const options = {
        key: API_KEY 
     };
     //   const url = `https://pixabay.com/api/?key=31443725-552c7029b7e3db06c0fa48d2c&q=${this.searchQuery}&image_tipe=photo&orientation=horizontal&safesearch=true&per_page=40&page=1`;
      const url = `https://pixabay.com/api/?key=${API_KEY}&q=${this.searchQuery}&orientation=horizontal&safesearch=true&image_type=photo&per_page=40&page=${this.page}`;
    
- return fetch(url, options)
-     .then(response => response.json())
-     .then(data => {
-         console.log(data);
-     this.incrementPage();
- return data;
-     })
-     .catch(error => {
-          Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
-     });
+ try {
+        const response = await fetch(url, options);
+        const data = await response.json();
+        console.log(data);
+        this.incrementPage();
+        return data;
+    } catch (error) {
+        Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
+    }
      }
 
    incrementPage(){
