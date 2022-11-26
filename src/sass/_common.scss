@@ -1,8 +1,6 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
-.button.load-more {
-  display: none;
-}
+
 .search-form {
     display: flex;
     justify-content: center;
@@ -14,19 +12,13 @@
     left: 0;
     width: 100%;
 }
-.load-more-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px; 
-    margin-top: 10px;
-}
 
 .info {
-    display: flex;
+   
     text-align: center;
-    flex-grow: 2;
+    flex-grow: 1;
     justify-content: space-evenly;
+
     }
 
 .gallery {
@@ -36,7 +28,7 @@
     justify-content: center;
   }
 
-.gallery__image {
+.photo-img {
     max-width: 100%;
     width: 350px;
     height: 250px;
